@@ -443,7 +443,10 @@
 
 
   
-  <h1 id="Hooks概述"><a href="#Hooks概述" class="headerlink" title="Hooks概述"></a>Hooks概述</h1><p>Hooks 是一项新功能提案，可让您在不编写类的情况下使用 state(状态) 和其他 React 功能。它们目前处于 React v16.7.0-alpha 中，并在 一个开放RFC 中进行讨论。<br>#State(状态) Hook<br>此示例渲染一个计数器。单击该按钮时，它会递增值：</p>
+  <h1 id="Hook钩子"><a href="#Hook钩子" class="headerlink" title="Hook钩子"></a>Hook钩子</h1><h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>React Hooks 是 React 16.7.0-alpha 版本推出的新特性，想尝试的同学安装此版本即可。<br>React Hooks 要解决的问题是状态共享，是继 render-props 和 higher-order components 之后的第三种状态共享方案，不会产生 JSX 嵌套地狱问题。<br>这个状态指的是状态逻辑，所以称为状态逻辑复用会更恰当，因为只共享数据处理逻辑，不会共享数据本身。<br>它可以让你在不编写class 的情况下使用state以及其他的React特性。（比如生命周期、ref等类组件拥有的特性）<br>基础Hook:</p>
+<p>useState 给函数组件添加内部state<br>useEffect 可以让你在函数组件中执行副作用操作<br>useContext 组件间数据共享更轻松 </p>
+<p>额外Hook：</p>
+<p>useReducer 替代useState统一管理数据状态<br>useRef<br>useCallback<br>useMemo<br>此示例渲染一个计数器。单击该按钮时，它会递增值：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#123; useState &#125; from &#39;react&#39;;</span><br><span class="line"></span><br><span class="line">function Example() &#123;</span><br><span class="line">  &#x2F;&#x2F; 声明一个新的状态变量，我们将其称为 &quot;count&quot;</span><br><span class="line">  const [count, setCount] &#x3D; useState(0);</span><br><span class="line"></span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;button onClick&#x3D;&#123;() &#x3D;&gt; setCount(count + 1)&#125;&gt;</span><br><span class="line">        Click me</span><br><span class="line">      &lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这里，useState 是一个 Hook（我们将在稍后讨论这意味着什么）。 我们在函数组件中调用它来向它添加一些本地 state(状态) 。 React 将在重新渲染之间保留此 state(状态) 。 useState 返回一对：current state(状态)值和一个允许你更新它的函数。 您可以从事件处理程序或其他位置调用此函数。 它类似于类中的 this.setState ，除了它不会将旧 state(状态) 和新 state(状态) 合并在一起。 （我们将在 使用 State(状态) Hook 中显示一个 useState 与 this.state 进行比较的示例。）</p>
 <p>useState 的唯一参数是初始 state(状态)。 在上面的例子中，它是 0，因为我们的计数器从零开始。 请注意，与 this.state 不同，此处的状态不必是对象 - 尽管如果你想要的话也可以是。 初始状态参数仅在第一次渲染期间使用。</p>
@@ -487,7 +490,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-28T10:34:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-28T19:41:48+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Dec 28, 2020</p>
@@ -563,6 +566,12 @@
   
     <div class="prev-next">
       
+        <a class='prev' href='/2020/12/28/class%E6%80%BB%E7%BB%93/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>class总结</p>
+          <p class='content'>类的由来JavaScript 语言中，生成实例对象的传统方法是通过构造函数。下面是一个例子。
+12345678910function Point(x, y) &#123;  this.x &#x...</p>
+        </a>
+      
       
         <a class='next' href='/2020/12/25/hello-world/'>
           <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
@@ -609,7 +618,7 @@
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">是什么</span></a></li></ol>
     </div>
   </section>
 
