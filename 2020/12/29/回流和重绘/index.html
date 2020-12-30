@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>ES6语法总结 - Hexo</title>
+  <title>回流和重绘 - Hexo</title>
   
 
   
@@ -391,7 +391,7 @@
     
     
       <h1 class="title">
-        ES6语法总结
+        回流和重绘
       </h1>
       <div class='new-meta-box'>
         
@@ -415,7 +415,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Dec 28, 2020</p>
+    <p>发布于：Dec 29, 2020</p>
   </a>
 </div>
 
@@ -426,7 +426,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="ES6语法总结" data-path="/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/">
+      <div id="lc-pv" data-title="回流和重绘" data-path="/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -443,25 +443,14 @@
 
 
   
-  <h1 id="ES6语法-let、const"><a href="#ES6语法-let、const" class="headerlink" title="ES6语法:let、const"></a>ES6语法:let、const</h1><h5 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h5><p>ES 的全称是 ECMAScript , 它是由 ECMA 国际标准化组织,制定的一项脚本语言的标准化规范。<br>ES6实际上是一个泛指，指ES2015及后续的版本。</p>
-<p>为什么使用 ES6 ?<br>每一次标准的诞生都意味着语言的完善，功能的加强。JavaScript语言本身也有一些令人不满意的地方，比如：<br>① 变量提升特性增加了程序运行时的不可预测性<br>② 语法过于松散，实现相同的功能，不同的人可能会写出不同的代码</p>
-<h5 id="ES6新增语法"><a href="#ES6新增语法" class="headerlink" title="ES6新增语法"></a>ES6新增语法</h5><h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><p>ES6中新增的用于声明变量的关键字<br>具有块级作用域、不存在变量提升、暂时性死区。</p>
-<h5 id="1-具有块级作用域"><a href="#1-具有块级作用域" class="headerlink" title="1.具有块级作用域"></a>1.具有块级作用域</h5><p>let声明的变量只在所处于的块级有效 ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let a &#x3D; 10;</span><br><span class="line">console.log(a);</span><br><span class="line">if(true)&#123;</span><br><span class="line">    let b &#x3D; 20;</span><br><span class="line">    console.log(b);</span><br><span class="line">    if(true)&#123;</span><br><span class="line">        let c &#x3D; 30;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(b);</span><br></pre></td></tr></table></figure>
-<p>在一个大括号中，使用let关键字声明的变量才具有块级作用域，var关键字是不具备这个特点的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;</span><br><span class="line">    let num &#x3D; 100;</span><br><span class="line">    var abc &#x3D; 200;</span><br><span class="line">&#125;</span><br><span class="line">console.log(abc);&#x2F;&#x2F;200</span><br><span class="line">console.log(num);&#x2F;&#x2F;报错 在if外面访问不到</span><br></pre></td></tr></table></figure>
-<p>防止循环变量变成全局变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (var i&#x3D;0;i&lt;2;i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">console.log(i);&#x2F;&#x2F;输出为2 i为2的时候循环条件才不成立</span><br></pre></td></tr></table></figure>
-<p>如果是let i = 0;则在循环外面访问不到<br>for循环虽然let没有写到大括号里 ，但是在小括号里使用let声明的变量依然和for循环进行绑定，在for循环外边是访问不到的</p>
-<h5 id="2-使用let关键字声明的变量没有变量提升"><a href="#2-使用let关键字声明的变量没有变量提升" class="headerlink" title="2.使用let关键字声明的变量没有变量提升"></a>2.使用let关键字声明的变量没有变量提升</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);&#x2F;&#x2F;报错</span><br><span class="line">let a &#x3D; 100;</span><br></pre></td></tr></table></figure>
-<h5 id="3-使用let关键字声明的变量具有暂时性死区特性"><a href="#3-使用let关键字声明的变量具有暂时性死区特性" class="headerlink" title="3.使用let关键字声明的变量具有暂时性死区特性"></a>3.使用let关键字声明的变量具有暂时性死区特性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; 10;</span><br><span class="line">if(true)&#123;</span><br><span class="line">    console.log(num)</span><br><span class="line">    let num &#x3D; 20</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>一旦在块级作用域中，使用let关键字声明的变量就会和块级区整体进行绑定，在当前区域使用num这个变量 和外部的num是没有任何关系的</p>
-<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>作用：声明常量，常量就是值（内存地址），不能变化的量<br>具有块级作用域、必须赋初始值、值不可更改</p>
-<h5 id="1-具有块级作用域-1"><a href="#1-具有块级作用域-1" class="headerlink" title="1.具有块级作用域"></a>1.具有块级作用域</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;</span><br><span class="line">    const a &#x3D; 10;</span><br><span class="line">    if(true)&#123;</span><br><span class="line">        const a &#x3D; 20;</span><br><span class="line">        console.log(a);&#x2F;&#x2F;20</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(a); &#x2F;&#x2F;10</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);&#x2F;&#x2F;报错 if外面找不到a</span><br></pre></td></tr></table></figure>
-<h5 id="2-使用const关键字声明的常量必须赋初始值"><a href="#2-使用const关键字声明的常量必须赋初始值" class="headerlink" title="2.使用const关键字声明的常量必须赋初始值"></a>2.使用const关键字声明的常量必须赋初始值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const PI;</span><br><span class="line">console.log(PI);&#x2F;&#x2F;报错 声明const常量的时候丢失了初始值</span><br><span class="line">const pi &#x3D; 3.14;</span><br><span class="line">console.log(pi)&#x2F;&#x2F;正常输出</span><br></pre></td></tr></table></figure>
-<h5 id="3-常量赋值后，值不可更改"><a href="#3-常量赋值后，值不可更改" class="headerlink" title="3.常量赋值后，值不可更改"></a>3.常量赋值后，值不可更改</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const PI &#x3D; 3.14;</span><br><span class="line">PI &#x3D; 100;&#x2F;&#x2F;报错</span><br><span class="line">const ary &#x3D; [100,200];</span><br><span class="line">ary[0] &#x3D; 123;</span><br><span class="line">ary &#x3D; [1,2];&#x2F;&#x2F;报错</span><br><span class="line">console.log(ary)&#x2F;&#x2F;[123,200]</span><br></pre></td></tr></table></figure>
-<p>常量声明后值不可更改 实际上指的是值对应的内存地址不可更改<br>复杂数据类型来讲，内部的值是可以更改的，但是不可以重新赋值</p>
-<h5 id="let、const、var的区别"><a href="#let、const、var的区别" class="headerlink" title="let、const、var的区别"></a>let、const、var的区别</h5><p>使用var声明的变量，其作用域为该语句所在的函数内，且存在变量提升现象。<br>使用let声明的变量，其作用域为该语句所在的代码块内，不存在变量提升。<br>使用const声明的是常量，在后面出现的代码中不能再修改该常量的值。<br>|  var  |  函数级作用域  |  变量提升  |  值可更改  |<br>|  let  |  块级作用域  |  不存在变量提升  |  值可更改  |<br>|  const  |  块级作用域  |  不存在变量提升  |  值不可更改  |<br>如果存储的数据不需要变化，尽量使用const</p>
+  <h1 id="回流和重绘"><a href="#回流和重绘" class="headerlink" title="回流和重绘"></a>回流和重绘</h1><h3 id="页面的显示过程"><a href="#页面的显示过程" class="headerlink" title="页面的显示过程:"></a>页面的显示过程:</h3><p> 1.生成DOM树(DOM TREE)<br> 2.加载CSS<br> 3.生成渲染树(RENDER TREE),渲染树是和样式相关的<br> 4.浏览器基于GPU(显卡)开始按照RENDER TREE画页面 </p>
+<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><p> 当某一个DOM元素 样式更改 (位置没变只是样式更改，例如：颜色变为红色…)浏览器会重新渲染这个元素<br>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">box.style.color &#x3D; &#39;red&#39;</span><br><span class="line">&#x2F;&#x2F;...</span><br><span class="line">box.style.fontsize &#x3D; &#39;16px&#39;</span><br></pre></td></tr></table></figure>
+<p>上面操作触发了两次重绘，性能上有所消耗，为了优化性能，我们最好一次性把需要修改的样式搞定，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.xxx&#123;</span><br><span class="line">    color:&#39;red&#39;,</span><br><span class="line">    font-size:&#39;16px&#39;</span><br><span class="line">&#125;</span><br><span class="line">box.className &#x3D; &#39;xxx&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><p>1.页面首次渲染<br>2.当DOM元素的结构或者位置发生改变（删除、增加、改变位置、改变大小……）<br>3.获取某些属性也会引起回流都会引发回流，所谓回流，就是浏览器抛弃原有计算的结构和样式，从新进行DOM TREE或者RENDER TREE，非常非常非常……消耗性能</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1.避免频繁操作样式：一次性把需要修改的样式搞定<br>2.避免频繁操作DOM</p>
+<h3 id="他们的区别很大："><a href="#他们的区别很大：" class="headerlink" title="他们的区别很大："></a>他们的区别很大：</h3><p>1.回流必将引起重绘，而重绘不一定会引起回流。比如：只有颜色改变的时候就只会发生重绘而不会引起回流。<br>2.当页面布局和几何属性改变时就需要回流，比如：添加或者删除可见的DOM元素，元素位置改变，元素尺寸改变——边距、填充、边框、宽度和高度，内容改变。</p>
 
   
   
@@ -479,7 +468,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/>http://example.com/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/>http://example.com/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/</a></p>
               
             
           </blockquote>
@@ -496,10 +485,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-28T19:32:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-29T19:19:19+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 28, 2020</p>
+    <p>更新于：Dec 29, 2020</p>
   </a>
 </div>
 
@@ -518,7 +507,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/&title=ES6语法总结 - Hexo&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/&title=回流和重绘 - Hexo&summary="
           
           >
           
@@ -530,7 +519,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/&title=ES6语法总结 - Hexo&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/&title=回流和重绘 - Hexo&summary="
           
           >
           
@@ -542,7 +531,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/&title=ES6语法总结 - Hexo&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/&title=回流和重绘 - Hexo&summary="
           
           >
           
@@ -572,16 +561,15 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>回流和重绘</p>
-          <p class='content'>回流和重绘页面的显示过程: 1.生成DOM树(DOM TREE) 2.加载CSS 3.生成渲染树(RENDER TREE),渲染树是和样式相关的 4.浏览器基于GPU(显卡)开始按照RENDER...</p>
+        <a class='prev' href='/2020/12/29/TypeScript%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>TypeScript知识整理</p>
+          <p class='content'>基础类型介绍为了让程序有价值，我们需要能够处理最简单的数据单元：数字，字符串，结构体，布尔值等。TypeScript支持与JavaScript几乎相同的数据类型，此外还提供了实用的枚举类型方便我...</p>
         </a>
       
       
-        <a class='next' href='/2020/12/28/class%E6%80%BB%E7%BB%93/'>
-          <p class='title'>class总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>类的由来JavaScript 语言中，生成实例对象的传统方法是通过构造函数。下面是一个例子。
-12345678910function Point(x, y) &#123;  this.x &#x...</p>
+        <a class='next' href='/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/'>
+          <p class='title'>ES6语法总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>ES6语法:let、constES6ES 的全称是 ECMAScript , 它是由 ECMA 国际标准化组织,制定的一项脚本语言的标准化规范。ES6实际上是一个泛指，指ES2015及后续的版本...</p>
         </a>
       
     </div>
@@ -624,7 +612,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#ES6"><span class="toc-text">ES6</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ES6%E6%96%B0%E5%A2%9E%E8%AF%AD%E6%B3%95"><span class="toc-text">ES6新增语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#let"><span class="toc-text">let</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%85%B7%E6%9C%89%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">1.具有块级作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8let%E5%85%B3%E9%94%AE%E5%AD%97%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F%E6%B2%A1%E6%9C%89%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="toc-text">2.使用let关键字声明的变量没有变量提升</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8let%E5%85%B3%E9%94%AE%E5%AD%97%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F%E5%85%B7%E6%9C%89%E6%9A%82%E6%97%B6%E6%80%A7%E6%AD%BB%E5%8C%BA%E7%89%B9%E6%80%A7"><span class="toc-text">3.使用let关键字声明的变量具有暂时性死区特性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const"><span class="toc-text">const</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%85%B7%E6%9C%89%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F-1"><span class="toc-text">1.具有块级作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8const%E5%85%B3%E9%94%AE%E5%AD%97%E5%A3%B0%E6%98%8E%E7%9A%84%E5%B8%B8%E9%87%8F%E5%BF%85%E9%A1%BB%E8%B5%8B%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="toc-text">2.使用const关键字声明的常量必须赋初始值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%B8%B8%E9%87%8F%E8%B5%8B%E5%80%BC%E5%90%8E%EF%BC%8C%E5%80%BC%E4%B8%8D%E5%8F%AF%E6%9B%B4%E6%94%B9"><span class="toc-text">3.常量赋值后，值不可更改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#let%E3%80%81const%E3%80%81var%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">let、const、var的区别</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%98%BE%E7%A4%BA%E8%BF%87%E7%A8%8B"><span class="toc-text">页面的显示过程:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%BB%98"><span class="toc-text">重绘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%B5%81"><span class="toc-text">回流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%96%E4%BB%AC%E7%9A%84%E5%8C%BA%E5%88%AB%E5%BE%88%E5%A4%A7%EF%BC%9A"><span class="toc-text">他们的区别很大：</span></a></li></ol>
     </div>
   </section>
 
@@ -644,7 +632,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="ES6语法总结";
+  pdata.postTitle="回流和重绘";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
