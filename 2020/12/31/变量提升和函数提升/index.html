@@ -449,8 +449,7 @@
 <h1 id="一、变量提升"><a href="#一、变量提升" class="headerlink" title="一、变量提升"></a>一、变量提升</h1><p>1.所指的形式：var variable = ‘提升’;(必须有关键字’var’)。<br>2.提升的方式：将”var variable”提升到当前作用域的顶部;”variable=’提升’”在原先定义的位置。<br>3.具体代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">console.log(variable);</span><br><span class="line">var variable &#x3D; &#39;我是全局中的变量&#39;;</span><br><span class="line">console.log(variable);</span><br><span class="line"></span><br><span class="line">function fn()&#123;</span><br><span class="line">    console.log(interiorVariable);</span><br><span class="line">    var interiorVariable &#x3D; &#39;我是函数内的变量&#39;;</span><br><span class="line">    console.log(interiorVariable)</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
 <h1 id="二、函数提升"><a href="#二、函数提升" class="headerlink" title="二、函数提升"></a>二、函数提升</h1><p>1.函数提升所指的形式：function fn(){……};(必须是函数声明的形式，不能是函数表达式的形式)。<br>2.函数提升的方式：将”function fn(){……}”整个函数声明代码块提升到当前作用域的顶部，原先位置以不存在该代码。</p>
-<p>```<br>console.log(f1);//函数提升，整个代码块提升到文件的最开始 f1();<br>console.log(f2);<br>function f1(){<br>    console.log(‘我是函数f1’);<br>}<br>var f2 = function(){<br>    console.log(‘我是函数f2’)<br>}<br>(function(){<br>    console.log(‘closure’);<br>    a = ‘aaa’<br>    var a = ‘bbb’;<br>    console.log(a)<br>})();</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">console.log(f1);&#x2F;&#x2F;函数提升，整个代码块提升到文件的最开始 f1();</span><br><span class="line">console.log(f2);</span><br><span class="line">function f1()&#123;</span><br><span class="line">    console.log(&#39;我是函数f1&#39;);</span><br><span class="line">&#125;</span><br><span class="line">var f2 &#x3D; function()&#123;</span><br><span class="line">    console.log(&#39;我是函数f2&#39;)</span><br><span class="line">&#125;</span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(&#39;closure&#39;);</span><br><span class="line">    a &#x3D; &#39;aaa&#39;</span><br><span class="line">    var a &#x3D; &#39;bbb&#39;;</span><br><span class="line">    console.log(a)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
   
   
     
@@ -484,10 +483,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T09:05:18+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-05T10:45:28+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 31, 2020</p>
+    <p>更新于：Jan 5, 2021</p>
   </a>
 </div>
 
@@ -559,6 +558,11 @@
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>严格模式</p>
+          <p class='content'>(1)严格模式类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所...</p>
+        </a>
       
       
         <a class='next' href='/2020/12/31/TypeScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
