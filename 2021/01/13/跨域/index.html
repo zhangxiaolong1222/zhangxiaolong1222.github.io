@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -23,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>跨域 - Hexo</title>
   
 
   
@@ -58,7 +54,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +305,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -374,7 +370,7 @@
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -385,508 +381,210 @@
         
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/13/%E8%B7%A8%E5%9F%9F/">
+      <h1 class="title">
         跨域
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        跨域跨域是指三者任意不同的资源之间由于受到浏览器的同源策略限制无法正常交互通信。
-同源策略同源策略限制了从同一个源的文件或脚本与来自另一个源的资源进行交互，这是用于隔离潜在恶意文件的重要安全机制。
-跨域解决方案JSONP浏览器同源策略允许标签的跨域资源嵌套，不受同源策略限制。比如：通常为了减轻web服务器的负载，我们把js、img、css等静态资源分离到另一台独立域名的服务器上，在html页...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-13</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 13, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="跨域" data-path="/2021/01/13/%E8%B7%A8%E5%9F%9F/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>跨域是指三者任意不同的资源之间由于受到浏览器的同源策略限制无法正常交互通信。</p>
+<h5 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h5><p>同源策略限制了从同一个源的文件或脚本与来自另一个源的资源进行交互，这是用于隔离潜在恶意文件的重要安全机制。</p>
+<h5 id="跨域解决方案"><a href="#跨域解决方案" class="headerlink" title="跨域解决方案"></a>跨域解决方案</h5><h5 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h5><p>浏览器同源策略允许<script>标签的跨域资源嵌套，<script>不受同源策略限制。<br>比如：通常为了减轻web服务器的负载，我们把js、img、css等静态资源分离到另一台独立域名的服务器上，在html页面中再通过对应的标签<script>加载不同域下的资源。<br>与后端交互：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--原生实现</span><br><span class="line">    前端设置好回调函数，并把回调函数当做请求url的参数</span><br><span class="line">    后端接受到请求后，返回回调函数名和需要的数据</span><br><span class="line">    返回的数据传入到回调函数中并执行</span><br><span class="line">--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    function jsonpCallback(data)&#123;</span><br><span class="line">        alert(&quot;获取到数据&quot;)</span><br><span class="line">        console.log(data)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:3000?callback&#x3D;jsonpCallback&quot;&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&lt;!--也可以使用AJAX请求方式来跨域请求--&gt;</span><br><span class="line">    function jsonpCallback(data)&#123;</span><br><span class="line">        alert(&quot;获取数据&quot;)</span><br><span class="line">        console.log(data)</span><br><span class="line">    &#125;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type:&#39;GET&#39;,</span><br><span class="line">        url:&#39;http:&#x2F;&#x2F;127.0.0.1:3000&#39;,</span><br><span class="line">        dataType:&#39;jsonp&#39;,               &#x2F;&#x2F;设置为jsonp类型</span><br><span class="line">        jsonpCallback:jsonpCallback     &#x2F;&#x2F;自定义回调函数</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">优点：兼容性好、缺点：只支持GET方式的HTTP请求，不能解决不同域下的不同页面之间的通信</span><br></pre></td></tr></table></figure>
+<h5 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h5><p>服务端设置Access-Control-Allow-Origin字段，值是具体的域名或者通配符’*’，就可以进行跨域请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">缺点：需要后端支持</span><br></pre></td></tr></table></figure>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/13/%E8%B7%A8%E5%9F%9F/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/13/%E8%B7%A8%E5%9F%9F/>http://example.com/2021/01/13/%E8%B7%A8%E5%9F%9F/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-13T17:35:28+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 13, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/12/%E9%97%AD%E5%8C%85/">
-        闭包
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        闭包的定义123闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-为什么要使用闭包1234先介绍一下全局变量和局部变量的优缺点全局变量：可以重用、但是会造成全局污染而且容易被篡改。局部变量：仅函数内使用不会造成全局污染也不会被篡改、不...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/13/%E8%B7%A8%E5%9F%9F/&title=跨域 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/13/%E8%B7%A8%E5%9F%9F/&title=跨域 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/13/%E8%B7%A8%E5%9F%9F/&title=跨域 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/12/%E9%97%AD%E5%8C%85/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        原型链
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        面向对象思想和原型链面向过程和面向对象都是解决问题的一种思路 面向对象：注重的是结果 面向过程：冒泡排序，两联比较大小，注重的是过程
-面向对象的三大特征封装：将功能封装到对象或函数里，只暴露指定的接口在外，继承：js中继承是对象之间的继承，如果一个对象想要有另一个对象是成员，就继承另一个对象
-继承的方式混入式继承123456789101112131415161718let wang&#x3D...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-11</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
-            Read More
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/01/12/%E9%97%AD%E5%8C%85/'>
+          <p class='title'>闭包<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>闭包的定义123闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">
-        严格模式
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        (1)严格模式类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以ES6实际上把整个语言升级到了严格模式。
-(2)不存在提升类不存在变量提升(hoist)，这一点与ES5完全不同。
-12new Foo();class Foo &#123;&#125;
-上面代码中，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-05</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/31/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/">
-        变量提升和函数提升
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JS中的函数提升和变量提升变量提升和函数提升：就是将变量声明或者函数全部代码提升到当前作用域（全局作用域或函数作用域）最开始的部分。
-JavaScript中函数域为最小域范围；for循环、while循环、if语句、switch语句的”{}”不是作用域。
-注意：这里指的是ES6之前。
-一、变量提升1.所指的形式：var variable = ‘提升’;(必须有关键字’var’)。2.提升的方式...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-31</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/31/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/31/TypeScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">
-        TypeScript严格模式
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        TypeScript 中的严格模式在 tsconfig.json 文件中，有一个配置项叫做 strict，默认为 true，表示开启严格模式：
-1234&#123;    &#x2F;* Strict Type-Checking Options *&#x2F;    &quot;strict&quot;: true,                       &#x2F;* Enable ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-31</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/31/TypeScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/29/TypeScript%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">
-        TypeScript知识整理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        基础类型介绍为了让程序有价值，我们需要能够处理最简单的数据单元：数字，字符串，结构体，布尔值等。TypeScript支持与JavaScript几乎相同的数据类型，此外还提供了实用的枚举类型方便我们使用。
-布尔值最基本的数据类型就是简单的true/false值，在JavaScript和TypeScript里叫做boolean。
-1let isDone: boolean &#x3D; false...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-29</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/29/TypeScript%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/">
-        回流和重绘
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        回流和重绘页面的显示过程: 1.生成DOM树(DOM TREE) 2.加载CSS 3.生成渲染树(RENDER TREE),渲染树是和样式相关的 4.浏览器基于GPU(显卡)开始按照RENDER TREE画页面 
-重绘 当某一个DOM元素 样式更改 (位置没变只是样式更改，例如：颜色变为红色…)浏览器会重新渲染这个元素例子：
-123box.style.color &#x3D; &#39;re...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-29</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/29/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/">
-        ES6语法总结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        ES6语法:let、constES6ES 的全称是 ECMAScript , 它是由 ECMA 国际标准化组织,制定的一项脚本语言的标准化规范。ES6实际上是一个泛指，指ES2015及后续的版本。
-为什么使用 ES6 ?每一次标准的诞生都意味着语言的完善，功能的加强。JavaScript语言本身也有一些令人不满意的地方，比如：① 变量提升特性增加了程序运行时的不可预测性② 语法过于松散，实现...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/28/ES6%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/28/class%E6%80%BB%E7%BB%93/">
-        class总结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        类的由来JavaScript 语言中，生成实例对象的传统方法是通过构造函数。下面是一个例子。
-12345678910function Point(x, y) &#123;  this.x &#x3D; x;  this.y &#x3D; y;&#125;Point.prototype.toString &#x3D; function () &#123;  return &#39;(&#39;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/28/class%E6%80%BB%E7%BB%93/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -896,82 +594,22 @@ JavaScript中函数域为最小域范围；for循环、while循环、if语句、
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F"><span class="toc-text">跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="toc-text">同源策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">跨域解决方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JSONP"><span class="toc-text">JSONP</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
@@ -987,14 +625,14 @@ JavaScript中函数域为最小域范围；for循环、while循环、if语句、
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="跨域";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
