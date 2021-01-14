@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -23,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>this指向 - Hexo</title>
   
 
   
@@ -309,7 +305,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -385,162 +381,215 @@
         
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
+    
+      <h1 class="title">
+        this指向
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/28/class%E6%80%BB%E7%BB%93/">
-        class总结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 14, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
       
-        类的由来JavaScript 语言中，生成实例对象的传统方法是通过构造函数。下面是一个例子。
-12345678910function Point(x, y) &#123;  this.x &#x3D; x;  this.y &#x3D; y;&#125;Point.prototype.toString &#x3D; function () &#123;  return &#39;(&#39;...
-      
-    
+      <div id="lc-pv" data-title="this指向" data-path="/2021/01/14/this%E6%8C%87%E5%90%91/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-28</time>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h3 id="This-指向"><a href="#This-指向" class="headerlink" title="This 指向"></a>This 指向</h3><p>1、在函数体中，非显式或隐式地简单调用函数时，在严格模式下，函数内的this指向 underfined，在非严格模式下，函数内的this指向 全局对象window/global</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a&#x3D;&#39;ABC&#39;</span><br><span class="line">function t1()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">t1();&#x2F;&#x2F; 输出ABC  this指向 window</span><br><span class="line"></span><br><span class="line">&#39;use strict&#39;;</span><br><span class="line">function t2()&#123;</span><br><span class="line">    console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">t2();&#x2F;&#x2F; undefined</span><br></pre></td></tr></table></figure>
+<p>2、使用new 调用构造函数时，构造函数内的this 指向新创建的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function f1()&#123;</span><br><span class="line">    this.a&#x3D;&#39;ABC&#39;</span><br><span class="line">&#125;</span><br><span class="line">var obj &#x3D; new f1();</span><br><span class="line">console.log(obj.a); &#x2F;&#x2F; ABC</span><br><span class="line"></span><br><span class="line">function f2()&#123;</span><br><span class="line">    this.a&#x3D;&#39;DEF&#39;</span><br><span class="line">    return &#123;a:&#39;GHI&#39;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">var obj2 &#x3D; new f2();</span><br><span class="line">console.log(obj2.a); &#x2F;&#x2F; GHI</span><br><span class="line">function f3()&#123;</span><br><span class="line">    this.a&#x3D;&#39;JKL&#39;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">var obj3 &#x3D; new f3();</span><br><span class="line">console.log(obj3.a); &#x2F;&#x2F; JKL</span><br></pre></td></tr></table></figure>
+<p>如果构造函数中返回一个值，若返回的是一个对象，this 指向返回的对象；否则this指向原创建实例。</p>
+<p>3、通过 出call/apply/bind方法显式调用函数时，函数内this 指向指定的对象（第一个参数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj &#x3D;&#123;</span><br><span class="line">    a:&#39;ABC&#39;,</span><br><span class="line">    f1:function(c,d)&#123;</span><br><span class="line">        console.log(this.a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var obj2 &#x3D;&#123;</span><br><span class="line">    a:&#39;DEF&#39;</span><br><span class="line">&#125;</span><br><span class="line">obj.f1();&#x2F;&#x2F; ABC</span><br><span class="line">obj.f1.call(obj2,&#39;arg1&#39;,&#39;arg2&#39;);&#x2F;&#x2F; DEF</span><br><span class="line">obj.f1.apply(obj2,[&#39;arg1&#39;,&#39;arg2&#39;]);&#x2F;&#x2F; DEF</span><br><span class="line">obj.f1.bind(obj2,&#39;arg1&#39;,&#39;arg2&#39;)();&#x2F;&#x2F; DEF</span><br></pre></td></tr></table></figure>
+<p>4、通过上下文对象A调用函数时，函数内this指向对象A；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a&#x3D;&#39;ABC&#39;</span><br><span class="line">var obj &#x3D;&#123;</span><br><span class="line">    a:&#39;DEF&#39;,</span><br><span class="line">    f1:function()&#123;</span><br><span class="line">        console.log(this.a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.f1(); &#x2F;&#x2F; DEF</span><br></pre></td></tr></table></figure>
+<p>另外，但存在复杂的多层调用关系时，this指向最后调用函数的对象。</p>
+<p>5、箭头函数的this的指向由它的外层作用域来决定的（指向外层作用域的this）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var obj &#x3D;&#123;</span><br><span class="line">    a:&#39;ABC&#39;,</span><br><span class="line">    f1:function()&#123;</span><br><span class="line">        setTimeout(() &#x3D;&gt;&#123;</span><br><span class="line">            console.log(this.a)</span><br><span class="line">        &#125;,1);</span><br><span class="line">        return &#123;</span><br><span class="line">            a:&#39;DEF&#39;,</span><br><span class="line">            f3:function()&#123;</span><br><span class="line">                setTimeout(() &#x3D;&gt;&#123;</span><br><span class="line">                    console.log(this.a)</span><br><span class="line">                &#125;,1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    f2:function()&#123;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            console.log(this.a)</span><br><span class="line">        &#125;,1);</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">var f1Obj &#x3D;obj.f1(); &#x2F;&#x2F; ABC</span><br><span class="line">obj.f2(); &#x2F;&#x2F; undefined</span><br><span class="line">f1Obj.f3(); &#x2F;&#x2F; DEF</span><br></pre></td></tr></table></figure>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/12/28/class%E6%80%BB%E7%BB%93/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/14/this%E6%8C%87%E5%90%91/>http://example.com/2021/01/14/this%E6%8C%87%E5%90%91/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-14T15:40:48+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 14, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/26/hooks%E6%80%BB%E7%BB%93/">
-        hooks总结
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Hook钩子是什么React Hooks 是 React 16.7.0-alpha 版本推出的新特性，想尝试的同学安装此版本即可。React Hooks 要解决的问题是状态共享，是继 render-props 和 higher-order components 之后的第三种状态共享方案，不会产生 JSX 嵌套地狱问题。这个状态指的是状态逻辑，所以称为状态逻辑复用会更恰当，因为只共享数据处理逻...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/14/this%E6%8C%87%E5%90%91/&title=this指向 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/14/this%E6%8C%87%E5%90%91/&title=this指向 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/14/this%E6%8C%87%E5%90%91/&title=this指向 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-26</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/26/hooks%E6%80%BB%E7%BB%93/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/25/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-25</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2020/12/25/hello-world/'>
-            Read More
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/01/13/%E8%B7%A8%E5%9F%9F/'>
+          <p class='title'>跨域<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>跨域跨域是指三者任意不同的资源之间由于受到浏览器的同源策略限制无法正常交互通信。
+同源策略同源策略限制了从同一个源的文件或脚本与来自另一个源的资源进行交互，这是用于隔离潜在恶意文件的重要安全机制...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-  
+  </article>
+
+
+
+
 
 
 </div>
@@ -550,82 +599,22 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#This-%E6%8C%87%E5%90%91"><span class="toc-text">This 指向</span></a></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
@@ -641,8 +630,8 @@ Qu...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="this指向";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
