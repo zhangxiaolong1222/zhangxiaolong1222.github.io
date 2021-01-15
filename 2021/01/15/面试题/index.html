@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021 - Hexo</title>
+  <title>面试题 - Hexo</title>
   
 
   
@@ -56,7 +54,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -307,7 +305,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -383,305 +381,234 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+      <h1 class="title">
         面试题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.闭包：可以访问其他函数内部变量的内部函数叫闭包闭包就是一个函数包着一个函数，里面的函数可以是任意函数，里面的函数可以访问到外面函数中生命的所有变量，但是外面函数不能访问里面函数的声明的变量。
-2.null和undefined的区别null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。
-当声明的变量还未被初始化时，变量的默认值为un...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-15</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 15, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="面试题" data-path="/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h5 id="1-闭包：可以访问其他函数内部变量的内部函数叫闭包"><a href="#1-闭包：可以访问其他函数内部变量的内部函数叫闭包" class="headerlink" title="1.闭包：可以访问其他函数内部变量的内部函数叫闭包"></a>1.闭包：可以访问其他函数内部变量的内部函数叫闭包</h5><p>闭包就是一个函数包着一个函数，里面的函数可以是任意函数，里面的函数可以访问到外面函数中生命的所有变量，但是外面函数不能访问里面函数的声明的变量。</p>
+<h5 id="2-null和undefined的区别"><a href="#2-null和undefined的区别" class="headerlink" title="2.null和undefined的区别"></a>2.null和undefined的区别</h5><p>null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。</p>
+<p>当声明的变量还未被初始化时，变量的默认值为undefined。</p>
+<p>null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
+<p>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</p>
+<p>（1）变量被声明了，但没有赋值时，就等于undefined。</p>
+<p>（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。</p>
+<p>（3）对象没有赋值的属性，该属性的值为undefined。</p>
+<p>（4）函数没有返回值时，默认返回undefined。</p>
+<p>null表示”没有对象”，即该处不应该有值。典型用法是：</p>
+<p>（1） 作为函数的参数，表示该函数的参数不是对象。</p>
+<p>（2） 作为对象原型链的终点。</p>
+<p>关注函数返回值，关注函数在什么时候被调用，关注函数this指向，关注函数的参数，关注函数的功能</p>
+<h5 id="3-隐藏元素的方法"><a href="#3-隐藏元素的方法" class="headerlink" title="3.隐藏元素的方法"></a>3.隐藏元素的方法</h5><ol>
+<li>display:none  (通过隐藏盒子属性，脱标)</li>
+<li>visibility:hidden  (通过隐藏盒子属性，不脱标)</li>
+<li>opacity:0  (t)  (通过改变元素的透明度，不脱标)</li>
+<li>position:absolute  (通过定位将元素定到远离页面的位置，脱标)</li>
+<li>cli-path:polygon(0px 0px , 0px 0px,0px 0px,0px 0px)  (通过裁剪盒子，不脱标)</li>
+<li>position:absolute;与clip:rect(0px 0px 0px 0px)配合  (通过裁剪绝对定位的盒子，脱标)</li>
+</ol>
+<h5 id="4-ajax请求的步骤"><a href="#4-ajax请求的步骤" class="headerlink" title="4.ajax请求的步骤"></a>4.ajax请求的步骤</h5><p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
+<p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
+<p>(3)设置响应HTTP请求状态变化的函数.</p>
+<p>(4)发送HTTP请求.</p>
+<p>(5)获取异步调用返回的数据.</p>
+<p>(6)使用JavaScript和DOM实现局部刷新</p>
+<h5 id="5-for-in-和Object-keys-都是用来循环对象的，二者有什么区别？"><a href="#5-for-in-和Object-keys-都是用来循环对象的，二者有什么区别？" class="headerlink" title="5.for in 和Object.keys 都是用来循环对象的，二者有什么区别？"></a>5.for in 和Object.keys 都是用来循环对象的，二者有什么区别？</h5><p>二者均能遍历对象的可枚举属性；<br>前者只能遍历obj对象自身的属性，后者可遍历obj对象隐式原型上的属性;<br>返回值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. Object.keys(obj) &#x2F;&#x2F;返回一个由对象obj的key组成的数组 [&#39;name&#39;,&#39;age&#39;,&#39;sex&#39;] </span><br><span class="line">2. for(item in obj)&#123;&#125; &#x2F;&#x2F;无返回值 </span><br></pre></td></tr></table></figure>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/>http://example.com/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-15T18:56:56+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 15, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/14/this%E6%8C%87%E5%90%91/">
-        this指向
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        This 指向1、在函数体中，非显式或隐式地简单调用函数时，在严格模式下，函数内的this指向 underfined，在非严格模式下，函数内的this指向 全局对象window/global
-1234567891011var a&#x3D;&#39;ABC&#39;function t1()&#123;    console.log(this.a)&#125;t1();&#x2F;&#x2F...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/&title=面试题 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/&title=面试题 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/&title=面试题 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/14/this%E6%8C%87%E5%90%91/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/13/%E8%B7%A8%E5%9F%9F/">
-        跨域
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        跨域跨域是指三者任意不同的资源之间由于受到浏览器的同源策略限制无法正常交互通信。
-同源策略同源策略限制了从同一个源的文件或脚本与来自另一个源的资源进行交互，这是用于隔离潜在恶意文件的重要安全机制。
-跨域解决方案JSONP浏览器同源策略允许标签的跨域资源嵌套，不受同源策略限制。比如：通常为了减轻web服务器的负载，我们把js、img、css等静态资源分离到另一台独立域名的服务器上，在html页...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-13</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/01/13/%E8%B7%A8%E5%9F%9F/'>
-            Read More
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/01/14/this%E6%8C%87%E5%90%91/'>
+          <p class='title'>this指向<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>This 指向1、在函数体中，非显式或隐式地简单调用函数时，在严格模式下，函数内的this指向 underfined，在非严格模式下，函数内的this指向 全局对象window/global
+1...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/12/%E9%97%AD%E5%8C%85/">
-        闭包
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        闭包的定义123闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-为什么要使用闭包1234先介绍一下全局变量和局部变量的优缺点全局变量：可以重用、但是会造成全局污染而且容易被篡改。局部变量：仅函数内使用不会造成全局污染也不会被篡改、不...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/12/%E9%97%AD%E5%8C%85/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        原型链
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        面向对象思想和原型链面向过程和面向对象都是解决问题的一种思路 面向对象：注重的是结果 面向过程：冒泡排序，两联比较大小，注重的是过程
-面向对象的三大特征封装：将功能封装到对象或函数里，只暴露指定的接口在外，继承：js中继承是对象之间的继承，如果一个对象想要有另一个对象是成员，就继承另一个对象
-继承的方式混入式继承123456789101112131415161718let wang&#x3D...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">
-        严格模式
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        (1)严格模式类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以ES6实际上把整个语言升级到了严格模式。
-(2)不存在提升类不存在变量提升(hoist)，这一点与ES5完全不同。
-12new Foo();class Foo &#123;&#125;
-上面代码中，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-05</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -689,87 +616,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E9%97%AD%E5%8C%85%EF%BC%9A%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%86%85%E9%83%A8%E5%87%BD%E6%95%B0%E5%8F%AB%E9%97%AD%E5%8C%85"><span class="toc-text">1.闭包：可以访问其他函数内部变量的内部函数叫闭包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-null%E5%92%8Cundefined%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2.null和undefined的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">3.隐藏元素的方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-ajax%E8%AF%B7%E6%B1%82%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">4.ajax请求的步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-for-in-%E5%92%8CObject-keys-%E9%83%BD%E6%98%AF%E7%94%A8%E6%9D%A5%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1%E7%9A%84%EF%BC%8C%E4%BA%8C%E8%80%85%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">5.for in 和Object.keys 都是用来循环对象的，二者有什么区别？</span></a></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -779,14 +647,14 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="面试题";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
