@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -23,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>MVVM框架 - Hexo</title>
   
 
   
@@ -58,7 +54,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +305,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -374,7 +370,7 @@
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -385,517 +381,213 @@
         
 
 <div class='l_main'>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
-        js垃圾回收机制
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        垃圾回收JavaScript引擎中有一个后台进程称为垃圾回收器，它监视所有对象，并删除那些不可访问的对象。
-垃圾回收机制的原理：找出那些不再继续使用的变量，然后释放其占用的内存。为此，垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间），周期性的执行这一操作；
-两种内存回收算法1、标记-清除算法javaScript中最常用的垃圾收集方式是标记清除（mark-and-sweep）。当变...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-20</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
   
-  
-  
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title" >
-      <a href="/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/">
+    
+    
+      <h1 class="title">
         MVVM框架
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        MVVM框架MVVM是Model-View-ViewMode的简写。它本质上就是MVC的改进版。MVVM就是将其中的View的状态和行为抽象化，让我们将视图UI和业务逻辑分开。当然这些事ViewModel已经帮我们做了，它可以取出Model的数据同时帮助处理View中由于需要展示内容而涉及的业务逻辑。微软的WPF带来了新的技术体验，如Silverlight、音频、视频、3D、动画……，这导致...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-20</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 20, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="MVVM框架" data-path="/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h3 id="MVVM框架"><a href="#MVVM框架" class="headerlink" title="MVVM框架"></a>MVVM框架</h3><p>MVVM是Model-View-ViewMode的简写。它本质上就是MVC的改进版。MVVM就是将其中的View的状态和行为抽象化，让我们将视图UI和业务逻辑分开。当然这些事ViewModel已经帮我们做了，它可以取出Model的数据同时帮助处理View中由于需要展示内容而涉及的业务逻辑。微软的WPF带来了新的技术体验，如Silverlight、音频、视频、3D、动画……，这导致了软件UI层更加细节化、可定制化。同时，在技术层面，WPF也带来了 诸如Binding、DependencyProperty、Routed Events、Command、DataTemplate、ControlTemplate等新特性。MVVM框架的由来便是MVP模式与WPF结合的应用方式时发展演变过来的一种新型架构框架。它立足于原有MVP框架并且把WPF的新特性糅合进去，以应对客户日益复杂的需求变化。</p>
+<h3 id="MVVM模式的组成部分"><a href="#MVVM模式的组成部分" class="headerlink" title="MVVM模式的组成部分"></a>MVVM模式的组成部分</h3><p>模型<br>模型是指代表真实状态内容的领域模型，或者代表内容的数据访问层（以数据为中心）。<br>视图<br>就像在MVC和MVP模式中一样，视图是用户在屏幕上看到的结构、布局和外观（UI）。<br>视图模型<br>视图模型是暴露公共属性和命令的视图的抽象。MVVM没有MVC模式的控制器，也没有MVP模式的preesenter，有的是一个绑定器。在视图模型中，绑定器在视图和数据绑定器之间进行通信。<br>绑定器<br>声明性数据和命令绑定隐含在MVVM模式中。在Microsoft解决方案堆中，绑定器是一种名为XAML的标记语言。绑定器使开发人员免于被迫编写样板式逻辑来同步视图模型和视图。在微软的堆之外实现时，声明性数据绑定技术的出现是实现该模式的一个关键因素。</p>
+<h3 id="MVVM优点"><a href="#MVVM优点" class="headerlink" title="MVVM优点"></a>MVVM优点</h3><p>MVVM模式和MVC模式一样，主要目的是分离视图（View）和模型（Model），有几大优点<br>1.低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的“View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。<br>2.可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。<br>3.独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xaml代码。<br>4.可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。<br>5.MVVM与MVP区别：<br>mvvm模式将Presener改名为View Model，基本上与MVP模式完全一致，唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在ViewModel。反之亦然。这样开发者就不用处理接受事件和View更新的工作，框架已经帮你做好了。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/>http://example.com/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-20T14:41:39+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 20, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/">
-        cookie的理解
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        cookie是什么Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。
-cookie的作用经常用来做一些用户会话状态管理、个性化设置等等。前端可以通过document.cookie来访问cookie。cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。关于cookie，前...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/&title=MVVM框架 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/&title=MVVM框架 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/&title=MVVM框架 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-18</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-        面试题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.闭包：可以访问其他函数内部变量的内部函数叫闭包闭包就是一个函数包着一个函数，里面的函数可以是任意函数，里面的函数可以访问到外面函数中生命的所有变量，但是外面函数不能访问里面函数的声明的变量。
-2.null和undefined的区别null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。
-当声明的变量还未被初始化时，变量的默认值为un...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-15</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/'>
-            Read More
-          </a>
-        </div>
+        <a class='prev' href='/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>js垃圾回收机制</p>
+          <p class='content'>垃圾回收JavaScript引擎中有一个后台进程称为垃圾回收器，它监视所有对象，并删除那些不可访问的对象。
+垃圾回收机制的原理：找出那些不再继续使用的变量，然后释放其占用的内存。为此，垃圾收集器...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/'>
+          <p class='title'>cookie的理解<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>cookie是什么Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。
+cookie的作用经常用来做一些用户会话状态管理、个...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/14/this%E6%8C%87%E5%90%91/">
-        this指向
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        This 指向1、在函数体中，非显式或隐式地简单调用函数时，在严格模式下，函数内的this指向 underfined，在非严格模式下，函数内的this指向 全局对象window/global
-1234567891011var a&#x3D;&#39;ABC&#39;function t1()&#123;    console.log(this.a)&#125;t1();&#x2F;&#x2F...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/14/this%E6%8C%87%E5%90%91/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/13/%E8%B7%A8%E5%9F%9F/">
-        跨域
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        跨域跨域是指三者任意不同的资源之间由于受到浏览器的同源策略限制无法正常交互通信。
-同源策略同源策略限制了从同一个源的文件或脚本与来自另一个源的资源进行交互，这是用于隔离潜在恶意文件的重要安全机制。
-跨域解决方案JSONP浏览器同源策略允许标签的跨域资源嵌套，不受同源策略限制。比如：通常为了减轻web服务器的负载，我们把js、img、css等静态资源分离到另一台独立域名的服务器上，在html页...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/13/%E8%B7%A8%E5%9F%9F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/12/%E9%97%AD%E5%8C%85/">
-        闭包
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        闭包的定义123闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-为什么要使用闭包1234先介绍一下全局变量和局部变量的优缺点全局变量：可以重用、但是会造成全局污染而且容易被篡改。局部变量：仅函数内使用不会造成全局污染也不会被篡改、不...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/12/%E9%97%AD%E5%8C%85/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        原型链
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        面向对象思想和原型链面向过程和面向对象都是解决问题的一种思路 面向对象：注重的是结果 面向过程：冒泡排序，两联比较大小，注重的是过程
-面向对象的三大特征封装：将功能封装到对象或函数里，只暴露指定的接口在外，继承：js中继承是对象之间的继承，如果一个对象想要有另一个对象是成员，就继承另一个对象
-继承的方式混入式继承123456789101112131415161718let wang&#x3D...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">
-        严格模式
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        (1)严格模式类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以ES6实际上把整个语言升级到了严格模式。
-(2)不存在提升类不存在变量提升(hoist)，这一点与ES5完全不同。
-12new Foo();class Foo &#123;&#125;
-上面代码中，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-05</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/31/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/">
-        变量提升和函数提升
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JS中的函数提升和变量提升变量提升和函数提升：就是将变量声明或者函数全部代码提升到当前作用域（全局作用域或函数作用域）最开始的部分。
-JavaScript中函数域为最小域范围；for循环、while循环、if语句、switch语句的”{}”不是作用域。
-注意：这里指的是ES6之前。
-一、变量提升1.所指的形式：var variable = ‘提升’;(必须有关键字’var’)。2.提升的方式...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-31</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/31/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -905,82 +597,22 @@ JavaScript中函数域为最小域范围；for循环、while循环、if语句、
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM%E6%A1%86%E6%9E%B6"><span class="toc-text">MVVM框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-text">MVVM模式的组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM%E4%BC%98%E7%82%B9"><span class="toc-text">MVVM优点</span></a></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
@@ -996,14 +628,14 @@ JavaScript中函数域为最小域范围；for循环、while循环、if语句、
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="MVVM框架";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

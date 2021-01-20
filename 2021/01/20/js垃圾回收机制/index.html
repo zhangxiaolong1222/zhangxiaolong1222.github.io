@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -23,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>js垃圾回收机制 - Hexo</title>
   
 
   
@@ -58,7 +54,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +305,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -374,7 +370,7 @@
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -385,517 +381,213 @@
         
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
+      <h1 class="title">
         js垃圾回收机制
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        垃圾回收JavaScript引擎中有一个后台进程称为垃圾回收器，它监视所有对象，并删除那些不可访问的对象。
-垃圾回收机制的原理：找出那些不再继续使用的变量，然后释放其占用的内存。为此，垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间），周期性的执行这一操作；
-两种内存回收算法1、标记-清除算法javaScript中最常用的垃圾收集方式是标记清除（mark-and-sweep）。当变...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-20</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 20, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="js垃圾回收机制" data-path="/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><p>JavaScript引擎中有一个后台进程称为垃圾回收器，它监视所有对象，并删除那些不可访问的对象。</p>
+<h5 id="垃圾回收机制的原理："><a href="#垃圾回收机制的原理：" class="headerlink" title="垃圾回收机制的原理："></a>垃圾回收机制的原理：</h5><p>找出那些不再继续使用的变量，然后释放其占用的内存。为此，垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间），周期性的执行这一操作；</p>
+<h3 id="两种内存回收算法"><a href="#两种内存回收算法" class="headerlink" title="两种内存回收算法"></a>两种内存回收算法</h3><h5 id="1、标记-清除算法"><a href="#1、标记-清除算法" class="headerlink" title="1、标记-清除算法"></a>1、标记-清除算法</h5><p>javaScript中最常用的垃圾收集方式是标记清除（mark-and-sweep）。<br>当变量进入环境时，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。</p>
+<p>垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记。然后，它会去掉环境中的变量以及被环境中的变量引用的变量标记。而在此之后再被加上标记的变量将被视为准备删除的变量，原因是环境中的变量已经无法访问到这些变量了。最后，垃圾收集器完成内存清除工作，销毁那些带标记的值并回收他们所占用的内存空间。</p>
+<h5 id="2、引用计数垃圾收集。"><a href="#2、引用计数垃圾收集。" class="headerlink" title="2、引用计数垃圾收集。"></a>2、引用计数垃圾收集。</h5><p>引用计数的含义是跟踪记录每个值被引用的次数。<br>当声明了一个变量并将一个引用类型赋值给该变量时，则这个值的引用此时就是1。如果同一个值又被赋给另一个变量，则该值的引用次数加1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减1。当这个值的引用次数变成0是，则说明没有办法再访问这个值了，因而就可以将其占用的内存空间回收回来。这样，当垃圾收集器下次再运行时，它就会释放那些引用次数为零的值所占用的内存。</p>
+<h5 id="3、两者对比及优缺点"><a href="#3、两者对比及优缺点" class="headerlink" title="3、两者对比及优缺点"></a>3、两者对比及优缺点</h5><p>基本类型值在内存中占据固定大小的空间，因此被保存在栈内存中；<br>从一个变量向另一个变量复制基本数据类型的值，会创建这个值的一个副本；</p>
+<p>引用类型的值是对象，保存在堆内存中；<br>包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针；</p>
+<p>当代码中存在引用计数的策略时，循环引用会导致问题；</p>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>JavaScript中的内存管理是自动执行的，而且是不可见的。我们创建基本类型、对象、函数等等这些都需要内存。<br>JavaScript操作的数据在内存中是这样存储的，当某块内存中存储的数据无用时，那么就要遵守javaScript的内存回收机制将这些空闲内存回收，以供重新分配。<br>使用具备垃圾收集机制的语言编写程序，开发人员一般不必操心内存管理问题。但是，javaScript在进行内存管理及垃圾回收时面临的问题还是有点与众不同。<br>最主要的一个问题：就是分配给web浏览器的可用内存数量通常比分配给桌面应用程序的少。<br>这样做的目的：主要是出于安全方面的考虑，目的是防止运行javaScript的网页耗尽全部系统内存而导致系统崩溃。内存限制问题不仅会影响给变量分配内存，同时还会影响调用栈以及在一个线程中能够同时执行的语句数量。</p>
+<h3 id="总结与思考"><a href="#总结与思考" class="headerlink" title="总结与思考"></a>总结与思考</h3><p>根据垃圾回收机制来思考:<br>我们应确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。<br>一旦数据不再有用，最好通过将其值设置为null来释放其引用，这个叫做接触引用。<br>这一做法适用于大多数全局变量和全局对象的属性。<br>局部变量会在它们离开执行环境时自动被解除引用。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/>http://example.com/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-20T14:50:51+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 20, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/">
-        MVVM框架
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        MVVM框架MVVM是Model-View-ViewMode的简写。它本质上就是MVC的改进版。MVVM就是将其中的View的状态和行为抽象化，让我们将视图UI和业务逻辑分开。当然这些事ViewModel已经帮我们做了，它可以取出Model的数据同时帮助处理View中由于需要展示内容而涉及的业务逻辑。微软的WPF带来了新的技术体验，如Silverlight、音频、视频、3D、动画……，这导致...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/&title=js垃圾回收机制 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/&title=js垃圾回收机制 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/&title=js垃圾回收机制 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-20</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/">
-        cookie的理解
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        cookie是什么Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。
-cookie的作用经常用来做一些用户会话状态管理、个性化设置等等。前端可以通过document.cookie来访问cookie。cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。关于cookie，前...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-18</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/'>
-            Read More
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/'>
+          <p class='title'>MVVM框架<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>MVVM框架MVVM是Model-View-ViewMode的简写。它本质上就是MVC的改进版。MVVM就是将其中的View的状态和行为抽象化，让我们将视图UI和业务逻辑分开。当然这些事View...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-        面试题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.闭包：可以访问其他函数内部变量的内部函数叫闭包闭包就是一个函数包着一个函数，里面的函数可以是任意函数，里面的函数可以访问到外面函数中生命的所有变量，但是外面函数不能访问里面函数的声明的变量。
-2.null和undefined的区别null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。
-当声明的变量还未被初始化时，变量的默认值为un...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/14/this%E6%8C%87%E5%90%91/">
-        this指向
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        This 指向1、在函数体中，非显式或隐式地简单调用函数时，在严格模式下，函数内的this指向 underfined，在非严格模式下，函数内的this指向 全局对象window/global
-1234567891011var a&#x3D;&#39;ABC&#39;function t1()&#123;    console.log(this.a)&#125;t1();&#x2F;&#x2F...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/14/this%E6%8C%87%E5%90%91/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/13/%E8%B7%A8%E5%9F%9F/">
-        跨域
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        跨域跨域是指三者任意不同的资源之间由于受到浏览器的同源策略限制无法正常交互通信。
-同源策略同源策略限制了从同一个源的文件或脚本与来自另一个源的资源进行交互，这是用于隔离潜在恶意文件的重要安全机制。
-跨域解决方案JSONP浏览器同源策略允许标签的跨域资源嵌套，不受同源策略限制。比如：通常为了减轻web服务器的负载，我们把js、img、css等静态资源分离到另一台独立域名的服务器上，在html页...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/13/%E8%B7%A8%E5%9F%9F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/12/%E9%97%AD%E5%8C%85/">
-        闭包
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        闭包的定义123闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-为什么要使用闭包1234先介绍一下全局变量和局部变量的优缺点全局变量：可以重用、但是会造成全局污染而且容易被篡改。局部变量：仅函数内使用不会造成全局污染也不会被篡改、不...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/12/%E9%97%AD%E5%8C%85/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        原型链
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        面向对象思想和原型链面向过程和面向对象都是解决问题的一种思路 面向对象：注重的是结果 面向过程：冒泡排序，两联比较大小，注重的是过程
-面向对象的三大特征封装：将功能封装到对象或函数里，只暴露指定的接口在外，继承：js中继承是对象之间的继承，如果一个对象想要有另一个对象是成员，就继承另一个对象
-继承的方式混入式继承123456789101112131415161718let wang&#x3D...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">
-        严格模式
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        (1)严格模式类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以ES6实际上把整个语言升级到了严格模式。
-(2)不存在提升类不存在变量提升(hoist)，这一点与ES5完全不同。
-12new Foo();class Foo &#123;&#125;
-上面代码中，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-05</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/05/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/31/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/">
-        变量提升和函数提升
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JS中的函数提升和变量提升变量提升和函数提升：就是将变量声明或者函数全部代码提升到当前作用域（全局作用域或函数作用域）最开始的部分。
-JavaScript中函数域为最小域范围；for循环、while循环、if语句、switch语句的”{}”不是作用域。
-注意：这里指的是ES6之前。
-一、变量提升1.所指的形式：var variable = ‘提升’;(必须有关键字’var’)。2.提升的方式...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-31</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/31/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -905,82 +597,22 @@ JavaScript中函数域为最小域范围；for循环、while循环、if语句、
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">垃圾回收</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">垃圾回收机制的原理：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95"><span class="toc-text">两种内存回收算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95"><span class="toc-text">1、标记-清除算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E3%80%81%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E3%80%82"><span class="toc-text">2、引用计数垃圾收集。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E3%80%81%E4%B8%A4%E8%80%85%E5%AF%B9%E6%AF%94%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">3、两者对比及优缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E6%80%9D%E8%80%83"><span class="toc-text">总结与思考</span></a></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
@@ -996,14 +628,14 @@ JavaScript中函数域为最小域范围；for循环、while循环、if语句、
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="js垃圾回收机制";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
