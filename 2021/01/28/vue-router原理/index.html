@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -23,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>vue-router原理 - Hexo</title>
   
 
   
@@ -58,7 +54,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +305,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -374,7 +370,7 @@
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -385,526 +381,214 @@
         
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/28/vue-router%E5%8E%9F%E7%90%86/">
+      <h1 class="title">
         vue-router原理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.什么是路由路由的概念起源于服务端，在以前前后端不分离的时候，由后端来控制路由，当接收到客户端发来的   HTTP 请求，就会根据所请求的相应 URL，来找到相应的映射函数，然后执行该函数，并将函数的返回值发送给客户端。他也存在这优势与劣势：
-优势：安全性好，seo优化性能高劣势：加大服务器的压力，不利于用户体验。
-所以前端路由才有了发展的空间。
-12345678前端路由的来源：在很久很久...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-28</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 28, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="vue-router原理" data-path="/2021/01/28/vue-router%E5%8E%9F%E7%90%86/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h3 id="1-什么是路由"><a href="#1-什么是路由" class="headerlink" title="1.什么是路由"></a>1.什么是路由</h3><p>路由的概念起源于服务端，在以前前后端不分离的时候，由后端来控制路由，当接收到客户端发来的   HTTP 请求，就会根据所请求的相应 URL，来找到相应的映射函数，然后执行该函数，并将函数的返回值发送给客户端。他也存在这优势与劣势：</p>
+<p>优势：<br>安全性好，seo优化性能高<br>劣势：加大服务器的压力，不利于用户体验。</p>
+<p>所以前端路由才有了发展的空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">前端路由的来源：</span><br><span class="line"></span><br><span class="line">在很久很久以前~ 用户的每次更新操作都需要重新刷新页面,非常的影响交互体验,后来,为了解决这个问题,</span><br><span class="line">便有了Ajax(异步加载方案),Ajax给体验带来了极大的提升。</span><br><span class="line">虽然Ajax解决了用户交互时体验的痛点,但是多页面之间的跳转一样会有不好的体验,所以便有了</span><br><span class="line">spa(single-page application)使用的诞生。而spa应用便是基于前端路由实现的,所以便有了前端路由。</span><br><span class="line"></span><br><span class="line">如今比较火的vue-router&#x2F;react-router 也是基于前端路由的原理实现的~</span><br></pre></td></tr></table></figure>
+<h3 id="2-路由模式"><a href="#2-路由模式" class="headerlink" title="2.路由模式"></a>2.路由模式</h3><p>前端路由：主要有两种模式hash模式和history模式。</p>
+<h3 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h3><p>URL的hash 是以#开头，是基于location.hash来实现的。Location.hash的值就是URL中#后面的内容。当hash改变时，页面不会因此刷新，浏览器也不会请求服务器。<br>同时，hash 改变时，并会出发相应的hashchange时间，所以，hash很适合被用来做前端路由。当hash路由发生跳转，便会触发hashchange回掉，回掉里面就可以实现页面的更新操作，从而达到跳转页面的效果。</p>
+<h3 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h3><p>主要是HTML5的History API 为浏览器的全局history对象增加的扩展方法。</p>
+<h5 id="pushState"><a href="#pushState" class="headerlink" title="pushState:"></a>pushState:</h5><p>需要三个参数：一个状态对象, 一个标题(目前被忽略), 和一个URL</p>
+<p>state, 状态对象state是一个JavaScript对象，popstate事件触发时，该对象会传入回调函数<br>title, 目前所有浏览器忽略<br>url, 新的url记录</p>
+<h5 id="replaceState"><a href="#replaceState" class="headerlink" title="replaceState:"></a>replaceState:</h5><p>history.replaceState()的使用与history.pushState()非常相似，区别在于replaceState()是修改了当前的历史记录项而不是新建一个。</p>
+<h5 id="onpopstate"><a href="#onpopstate" class="headerlink" title="onpopstate:"></a>onpopstate:</h5><p>需要特别注意的是,调用history.pushState()或history.replaceState()不会触发popstate事件。只有在做出浏览器动作时，比如点击后退、前进按钮【或者调用JS中的history.back()、history.forward()、history.go()】才会触发该事件。<br>如果当前处于激活状态的历史记录条目是由history.pushState()方法创建，则popstate事件对象的state属性包含了这个历史记录条目的state对象的一个拷贝。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/28/vue-router%E5%8E%9F%E7%90%86/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/28/vue-router%E5%8E%9F%E7%90%86/>http://example.com/2021/01/28/vue-router%E5%8E%9F%E7%90%86/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-28T17:04:41+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 28, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/27/web%E8%AF%AD%E4%B9%89%E5%8C%96/">
-        web语义化
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        什么是web语义化Web语义化是指使用恰当语义的html标签、class类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的web页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。简单来说就是利...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/28/vue-router%E5%8E%9F%E7%90%86/&title=vue-router原理 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/28/vue-router%E5%8E%9F%E7%90%86/&title=vue-router原理 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/28/vue-router%E5%8E%9F%E7%90%86/&title=vue-router原理 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-27</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/27/web%E8%AF%AD%E4%B9%89%E5%8C%96/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/26/sprite/">
-        sprite
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        css sprite是什么是一种图像拼合技术。该方法是将多个小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分。
-原理CSS Sprite的原理是将多个icon按一定规律整理到一个图片文件中, 使用时利用background-image和background-position将图片中特定部分显示出来。
-123456.icon1 &#123;    backgr...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-26</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/01/26/sprite/'>
-            Read More
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/01/27/web%E8%AF%AD%E4%B9%89%E5%8C%96/'>
+          <p class='title'>web语义化<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>什么是web语义化Web语义化是指使用恰当语义的html标签、class类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的web页面一方面可以让机器在更少的人类...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/">
-        css选择器
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.什么是css选择器CSS 选择器用于定位我们想要给予样式的 HTML 元素
-2.什么是选择器优先级浏览器通过优先级来判断哪些属性值与一个元素最为相关，从而在该元素上应用这些属性值。优先级是基于不同种类选择器组成的匹配规则。
-3.css有哪些选择器CSS 选择器有许多种，例如 ID 选择器、类选择器、标签选择器、通用选择器、属性选择器、伪类选择器、伪元素选择器、群组选择器、后代选择器、子元...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-26</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
-        观察者模式
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        观察者模式在许多设计中，经常涉及多个对象都对一个特殊对象中的数据变化感兴趣，而且这多个对象都希望跟踪那个特殊对象中的数据变化，也就是说当对象间存在一对多关系时，在这样的情况下就可以使用观察者模式。当一个对象被修改时，则会自动通知它的依赖对象。观察者模式是关于多个对象想知道一个对象中数据变化情况的一种成熟的模式。观察者模式中有一个称作“主题”的对象和若干个称作“观察者”的对象，“主题”和“观察...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-26</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/25/proxy%E6%95%B4%E7%90%86/">
-        proxy整理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Proxy 对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）。
-术语handler包含捕捉器（trap）的占位符对象，可译为处理器对象。traps提供属性访问的方法。这类似于操作系统中捕获器的概念。target被 Proxy 代理虚拟化的对象。它常被作为代理的存储后端。根据目标验证关于对象不可扩展性或不可配置属性的不变量（保持不变的语义）。
-语...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-25</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/25/proxy%E6%95%B4%E7%90%86/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
-        js垃圾回收机制
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        垃圾回收JavaScript引擎中有一个后台进程称为垃圾回收器，它监视所有对象，并删除那些不可访问的对象。
-垃圾回收机制的原理：找出那些不再继续使用的变量，然后释放其占用的内存。为此，垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间），周期性的执行这一操作；
-两种内存回收算法1、标记-清除算法javaScript中最常用的垃圾收集方式是标记清除（mark-and-sweep）。当变...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-20</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/20/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/">
-        MVVM框架
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        MVVM框架MVVM是Model-View-ViewMode的简写。它本质上就是MVC的改进版。MVVM就是将其中的View的状态和行为抽象化，让我们将视图UI和业务逻辑分开。当然这些事ViewModel已经帮我们做了，它可以取出Model的数据同时帮助处理View中由于需要展示内容而涉及的业务逻辑。微软的WPF带来了新的技术体验，如Silverlight、音频、视频、3D、动画……，这导致...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-20</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/20/MVVM%E6%A1%86%E6%9E%B6/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/">
-        cookie的理解
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        cookie是什么Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。
-cookie的作用经常用来做一些用户会话状态管理、个性化设置等等。前端可以通过document.cookie来访问cookie。cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。关于cookie，前...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-18</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/18/cookie%E7%9A%84%E7%90%86%E8%A7%A3/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-        面试题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.闭包：可以访问其他函数内部变量的内部函数叫闭包闭包就是一个函数包着一个函数，里面的函数可以是任意函数，里面的函数可以访问到外面函数中生命的所有变量，但是外面函数不能访问里面函数的声明的变量。
-2.null和undefined的区别null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。
-当声明的变量还未被初始化时，变量的默认值为un...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/15/%E9%9D%A2%E8%AF%95%E9%A2%98/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 3
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -914,82 +598,22 @@ cookie的作用经常用来做一些用户会话状态管理、个性化设置�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%AF%E7%94%B1"><span class="toc-text">1.什么是路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F"><span class="toc-text">2.路由模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash%E6%A8%A1%E5%BC%8F"><span class="toc-text">hash模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history%E6%A8%A1%E5%BC%8F"><span class="toc-text">history模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pushState"><span class="toc-text">pushState:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#replaceState"><span class="toc-text">replaceState:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#onpopstate"><span class="toc-text">onpopstate:</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
@@ -1005,14 +629,14 @@ cookie的作用经常用来做一些用户会话状态管理、个性化设置�
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="vue-router原理";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
